@@ -98,11 +98,13 @@ class MaxHeap {
         // get max and last element
         const max = this.values[0];
         const end = this.values.pop();
-        // reassign first element to the last element
-        this.values[0] = end;
-        // heapify down until element is back in its correct position
-        this.heapifyDown(0);
-
+        
+        if (this.values.length > 0) {
+            // reassign first element to the last element
+            this.values[0] = end;
+            // heapify down until element is back in its correct position
+            this.heapifyDown(0);
+        }
         // return the max
         return max;
     }
